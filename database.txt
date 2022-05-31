@@ -1,0 +1,15 @@
+1.create database onlinetestdb;
+
+2.use onlinetestdb;
+
+3.create table user ( username varchar(20) PRIMARY KEY, password varchar(20) NOT NULL);
+
+4.create table test ( testid int(5) PRIMARY KEY auto_increment, subject varchar(40) NOT NULL);
+
+5.create table question ( queid int(5) PRIMARY KEY auto_increment, que varchar(255) NOT NULL,optiona varchar(100), optionb varchar(100), optionc varchar(100), optiond varchar(100), ans enum(‘a’,’b’,’c’,’d’), subject varchar(40) NOT NULL);
+
+6.create table test_question ( testid int(5),queid int(5), FOREIGN KEY(testid) REFERENCES test(testid), FOREIGN KEY(queid) REFERENCES question(queid));
+
+7.nsert into user ('username','password') values ( ‘admin’,’admin’);
+
+8.
